@@ -1,0 +1,130 @@
+.web3-wallet-section {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.web3-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.web3-header h3 {
+  color: #f8fafc;
+  margin: 0;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wallet-badge {
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.wallet-badge.connected {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.wallet-badge.disconnected {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.web3-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.crypto-balance {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.crypto-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+}
+
+.crypto-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.8rem;
+  color: #fff;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.crypto-info p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.web3-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.web3-btn {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border: none;
+  font-weight: bold;
+}
+
+.web3-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+}
+
+.claim-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  padding: 12px 25px;
+  font-size: 1.1rem;
+}
+
+.claim-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.claim-btn:disabled {
+  background: #475569;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .web3-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .web3-actions {
+    flex-direction: column;
+  }
+}

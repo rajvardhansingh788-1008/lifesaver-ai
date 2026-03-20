@@ -1,0 +1,19 @@
+{
+  "name": "lifesaver-ai-blockchain",
+  "version": "1.0.0",
+  "description": "Smart contracts for LifeSaver AI E-Coins",
+  "main": "index.js",
+  "scripts": {
+    "node": "hardhat node",
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.22.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,0 +1,109 @@
+.emergency-broadcast-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-color: rgba(220, 38, 38, 0.95);
+  z-index: 10000; /* Over everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  animation: flashRedBg 2s infinite alternate;
+}
+
+@keyframes flashRedBg {
+  from { background-color: rgba(220, 38, 38, 0.95); }
+  to { background-color: rgba(185, 28, 28, 0.95); }
+}
+
+.eb-content {
+  background: #0f172a;
+  padding: 3rem;
+  border-radius: 16px;
+  border: 4px solid #ef4444;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  animation: dropIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes dropIn {
+  0% { transform: translateY(-100px) scale(0.9); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.eb-title {
+  color: #ef4444;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  animation: strobe 0.5s infinite alternate;
+}
+
+@keyframes strobe {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+.eb-alert-box {
+  background: rgba(239, 68, 68, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ef4444;
+  margin-bottom: 2rem;
+}
+
+.eb-alert-box h2 {
+  margin: 0 0 0.5rem 0;
+  color: #f8fafc;
+  font-size: 1.8rem;
+}
+
+.eb-alert-box p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin: 0.5rem 0;
+}
+
+.eb-instruction {
+  font-weight: bold;
+  color: #fca5a5 !important;
+  font-size: 1.2rem !important;
+  margin-top: 1rem !important;
+}
+
+.eb-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eb-btn {
+  padding: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.eb-btn-primary {
+  background: #10b981;
+  color: white;
+}
+
+.eb-btn-primary:hover {
+  background: #059669;
+  transform: scale(1.02);
+}
+
+.eb-btn-secondary {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid #475569;
+}
+
+.eb-btn-secondary:hover {
+  background: #1e293b;
+  color: #cbd5e1;
+}
