@@ -118,9 +118,6 @@ export default function Dashboard() {
         </div>
         <div className="nav-links">
           <Link to="/dashboard" className="nav-link active">Dashboard</Link>
-          <Link to="/map" className="nav-link">Campus Map</Link>
-          <Link to="/guide" className="nav-link">A-Z Guide</Link>
-          <Link to="/history" className="nav-link">History</Link>
           <Link to="/simulation" className="nav-link">2D Simulate</Link>
           <Link to="/simulation-3d" className="nav-link">3D Simulate</Link>
           <Link to="/quiz" className="nav-link">Quiz</Link>
@@ -225,28 +222,10 @@ export default function Dashboard() {
             <p>Experience realistic moving 3D disasters (New!).</p>
             <span className="action-arrow">→</span>
           </div>
-          <div className="action-card action-map" onClick={() => navigate('/map')}>
-            <div className="action-icon">🗺️</div>
-            <h3>Campus Map</h3>
-            <p>View emergency evacuation routes and assembly points.</p>
-            <span className="action-arrow">→</span>
-          </div>
           <div className="action-card action-quiz" onClick={() => navigate('/quiz')}>
             <div className="action-icon">📝</div>
             <h3>Take Quiz</h3>
             <p>Test your knowledge and earn extra E-Coins.</p>
-            <span className="action-arrow">→</span>
-          </div>
-          <div className="action-card action-quiz" onClick={() => navigate('/guide')} style={{ '--fire-glow': 'rgba(16, 185, 129, 0.25)' }}>
-            <div className="action-icon">📖</div>
-            <h3>A-Z Disaster Guide</h3>
-            <p>Encyclopedia of survival strategies.</p>
-            <span className="action-arrow">→</span>
-          </div>
-          <div className="action-card action-board" onClick={() => navigate('/history')} style={{ '--fire-glow': 'rgba(245, 158, 11, 0.25)' }}>
-            <div className="action-icon">🕰️</div>
-            <h3>Historical Data</h3>
-            <p>Learn from past major disasters.</p>
             <span className="action-arrow">→</span>
           </div>
           <div className="action-card action-board" onClick={() => navigate('/leaderboard')}>

@@ -7,12 +7,7 @@ import Simulation3D from './pages/Simulation3D';
 import Quiz from './pages/Quiz';
 import Leaderboard from './pages/Leaderboard';
 import Admin from './pages/Admin';
-import EmergencyMap from './pages/EmergencyMap';
-import Guide from './pages/Guide';
-import History from './pages/History';
 import ChatBot from './components/ChatBot';
-import SOSButton from './components/SOSButton';
-import EmergencyBroadcast from './components/EmergencyBroadcast';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -38,9 +33,6 @@ function AppRoutes() {
       <Route path="/simulation-3d" element={<ProtectedRoute><Simulation3D /></ProtectedRoute>} />
       <Route path="/quiz" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
       <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
-      <Route path="/map" element={<ProtectedRoute><EmergencyMap /></ProtectedRoute>} />
-      <Route path="/guide" element={<ProtectedRoute><Guide /></ProtectedRoute>} />
-      <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
       <Route path="/admin" element={<AdminRoute><Admin /></AdminRoute>} />
       <Route path="*" element={<Navigate to={user ? "/dashboard" : "/login"} />} />
     </Routes>
@@ -49,18 +41,7 @@ function AppRoutes() {
 
 function ChatBotWrapper() {
   const { user } = useAuth();
-  // Don't show chatbot for admin, keep it for students
-  return user && user.role !== 'admin' ? <ChatBot /> : null;
-}
-
-function GlobalAlertsWrapper() {
-  const { user } = useAuth();
-  return user && user.role !== 'admin' ? (
-    <>
-      <SOSButton />
-      <EmergencyBroadcast />
-    </>
-  ) : null;
+  return user ? <ChatBot /> : null;
 }
 
 export default function App() {
@@ -68,7 +49,6 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <AppRoutes />
-        <GlobalAlertsWrapper />
         <ChatBotWrapper />
       </AuthProvider>
     </BrowserRouter>

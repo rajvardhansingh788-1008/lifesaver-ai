@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: `http://${window.location.hostname}:5001/api`,
+  baseURL: 'http://localhost:5001/api',
   timeout: 10000,
 });
 
@@ -53,11 +53,5 @@ export const sendChatMessage = (message) => API.post('/chatbot', { message });
 
 // Web3
 export const claimCoins = (data) => API.post('/web3/claim', data);
-
-// Alerts (SOS)
-export const submitSOS = (data) => API.post('/alerts/sos', data);
-export const getPendingAlerts = () => API.get('/alerts');
-export const broadcastAlert = (id) => API.post(`/alerts/broadcast/${id}`);
-export const getActiveBroadcasts = () => API.get('/alerts/active');
 
 export default API;

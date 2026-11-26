@@ -13,14 +13,13 @@ const userRoutes = require('./routes/user');
 const leaderboardRoutes = require('./routes/leaderboard');
 const adminRoutes = require('./routes/admin');
 const chatbotRoutes = require('./routes/chatbot');
-const alertRoutes = require('./routes/alerts');
 
 const app = express();
 
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: true,
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:5175', 'http://localhost:5176', 'http://localhost:3000'],
   credentials: true
 }));
 
@@ -44,7 +43,6 @@ app.use('/api/user', userRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/chatbot', chatbotRoutes);
-app.use('/api/alerts', alertRoutes);
 app.use('/api/web3', require('./routes/web3'));
 
 // Health check
